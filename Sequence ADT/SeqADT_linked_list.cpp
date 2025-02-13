@@ -13,8 +13,9 @@ class Linkedlist {
                 
                 Node(const T& d) : data(d) {
                     next = nullptr;
-                }
-        }
+                };
+        };
+        
     
         Node* head;
         Node* tail;
@@ -22,7 +23,8 @@ class Linkedlist {
 
     public:
         Linkedlist() { 
-            head = tail = nullptr;
+            head =  nullptr;
+            tail = nullptr;
             size=0;
         } // Constructor
 
@@ -95,10 +97,10 @@ class Linkedlist {
         }
 
         T& removeLast() {
-            if (head == nullptr) {
-                cout<< "Empty list" <<endl;
-                return;
-            }
+            // if (head == nullptr) {
+            //     cout<< "Empty list" <<endl;
+            //     return -1;
+            // }
             if (head == tail) {
                 T& ret = head->data;
                 delete head;
@@ -118,10 +120,11 @@ class Linkedlist {
         }
 
         T& removeFirst() {
-            if (head == nullptr) {
-                cout<< "Empty list" <<endl;
-                return;
-            }
+            // if (head == nullptr) {
+            //     cout << "Empty list" << endl;
+            //     return -1;
+            // }
+
             if (head == tail) {
                 T& ret = head->data;
                 delete head;
@@ -160,11 +163,8 @@ class Linkedlist {
             size++;
         }
 
-        T& remove(int index) {
-            if (index < 0 || index >= size) {
-                cout << "Invalid index" << endl;
-                return;
-            }
+        T& remove_index(int index) {
+           
             if (index == 0) {
                 return removeFirst();
             }
@@ -197,5 +197,43 @@ class Linkedlist {
 
 
         // Implement elementAt function
+        T& elementAt(int index) const {
+            Node* temp = head;
+            for (int i=0; i < index; i++) {
+                temp = temp->next;
+            }
+            return temp->data;
+        
+        }
+
+       
+
+
 }
-; // End of class Linkedlist
+;
+
+// End of class Linkedlist
+
+
+int main(){
+    Linkedlist<int> list;
+    for (int i=0; i < 10; i++) {
+        list.append(i^2);
+    }
+    for (int i=0; i < list.lenght(); i++) {
+        cout << list.elementAt(i) << " ";
+    }
+    cout << endl;
+    list.prepend(100);
+    list.append(200);
+    list.insert(5, 300);
+    list.replace(3, 400);
+    list.remove(2);
+    list.removeFirst();
+    list.removeLast();
+    for (int i=0; i < list.lenght(); i++) {
+        cout << list.elementAt(i) << " ";
+    }
+
+
+}
