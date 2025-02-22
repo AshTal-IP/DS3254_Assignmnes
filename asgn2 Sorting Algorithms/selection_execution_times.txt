@@ -1,0 +1,10 @@
+Input Size: 1000, Avg Execution Time: 0.00220048 seconds
+Input Size: 3000, Avg Execution Time: 0.0184317 seconds
+Input Size: 5000, Avg Execution Time: 0.0505953 seconds
+Input Size: 7000, Avg Execution Time: 0.0925981 seconds
+Input Size: 9000, Avg Execution Time: 0.150395 seconds
+Input Size: 11000, Avg Execution Time: 0.223142 seconds
+Input Size: 13000, Avg Execution Time: 0.301578 seconds
+Input Size: 15000, Avg Execution Time: 0.420282 seconds
+Input Size: 17000, Avg Execution Time: 0.5398 seconds
+Input Size: 19000, Avg Execution Time: 0.684777 seconds
